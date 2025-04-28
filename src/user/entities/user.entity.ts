@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Ledger } from '@/ledger/entities/ledger.entity';
+import { Ledger } from '../../ledger/entities/ledger.entity';
 
 @Entity()
 export class User {

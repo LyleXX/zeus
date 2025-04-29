@@ -13,7 +13,10 @@ import { Ledger } from './ledger/entities/ledger.entity';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: 'src/.env',
+      envFilePath:
+        process.env.NODE_ENV === 'production'
+          ? 'src/.env.production'
+          : 'src/.env',
     }),
     TypeOrmModule.forRootAsync({
       useFactory(configService: ConfigService) {
